@@ -1,0 +1,33 @@
+Options +FollowSymLinks -MultiViews
+Options +Indexes
+AcceptPathInfo Off
+RewriteEngine on
+RewriteBase   /
+
+#Force from http to https
+#RewriteCond %{SERVER_PORT} 80 
+#RewriteCond %{HTTP_HOST} !^ /localhost/assemblysystem $
+#RewriteRule ^(.*)$ /localhost/assemblysystem $1 [R=301]
+
+#take off index.html
+RewriteCond %{HTTP_HOST} !^\. [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)index\.php$ [NC]
+RewriteRule . http://%{HTTP_HOST}%1 [R=301,NE,L]
+
+## hide .php extension
+# To externally redirect /dir/foo.php to /dir/foo
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
+RewriteRule ^ %1 [R,L,NC]
+
+## To internally redirect /dir/foo to /dir/foo.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [L]
+
+## hide .html extension
+# To externally redirect /dir/foo.html to /dir/foo
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R,L,NC]
+
+## To internally redirect /dir/foo to /dir/foo.html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [L]

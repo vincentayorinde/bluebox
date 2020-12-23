@@ -1,0 +1,19 @@
+{
+  "name": "bluebox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/admin.js",
+  "authors": [
+    "Güray Yarar"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vincentayorinde",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

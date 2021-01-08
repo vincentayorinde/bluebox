@@ -17,6 +17,7 @@ if($connect->connect_error) {
  $name = 'BlueBox System - Tema west';
  $print_name = "TEMA WEST MUNICIPAL ASSEMBLY";
  $moto = "(TWMA)";
- $enquires = "For enquires contact 024 428 5786 or 024 438 6896";
- $pay = "Pay this bill on or before ________________";
+ $enquires = "For enquires contact 024 428 5786";
+ $pay = "Pay this bill on or before ________________.<br>
+ You can pay your bill through this momo merchant code: 350 532";
 ?>

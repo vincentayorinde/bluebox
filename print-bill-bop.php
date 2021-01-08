@@ -173,7 +173,7 @@ require_once 'db/config.php';
 	</tr>
 	<tr>
 		<td colspan="2"><strong>LOCATION:</strong> <?php echo $datap['location']; ?></td>
-		<td colspan="1"><strong>BILL YEAR:</strong> <?php echo $datap['year']; ?></td>
+		<td colspan="1"><strong>BILL YEAR:</strong> <?php echo date('Y'); ?></td>
 	</tr>
 </table>
 	<table border="0" width="620" cellpadding="5">
